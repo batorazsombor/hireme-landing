@@ -32,23 +32,25 @@ body {
     width: 100%;
 }
 
-/* --- Header --- */
+/* --- HEADER (Updated for Bigger Logo) --- */
 header {
-    padding: 20px 0;
+    padding-top: 30px;
+    padding-bottom: 40px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
+    /* Increased font size for "HireMe" text */
+    font-size: 42px; 
     font-weight: 700;
     color: white;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 30px; /* Adjust based on your tie icon size */
-    margin-left: 5px;
+    /* Increased height for the Tie Icon */
+    height: 50px; 
+    margin-left: 10px;
 }
 
 /* --- Hero Section --- */
@@ -204,4 +206,5 @@ button.submit-btn:hover {
     button.submit-btn {
         width: 100%; /* Full width button on mobile */
     }
+
 }
