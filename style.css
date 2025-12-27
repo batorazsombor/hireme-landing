@@ -1,0 +1,207 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --bg-color: #1a1a40; /* Dark Blue from design */
+    --accent-color: #ff4060; /* Pink/Red from design */
+    --text-white: #ffffff;
+    --input-radius: 30px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Container --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    width: 100%;
+}
+
+/* --- Header --- */
+header {
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 30px; /* Adjust based on your tie icon size */
+    margin-left: 5px;
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    flex-direction: row; /* Default: Side by side */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Optional rounded corners for the collage */
+}
+
+/* --- Typography --- */
+h1 {
+    font-size: 2.5rem; /* Large headline */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.subtext {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.description {
+    margin-top: 40px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    max-width: 90%;
+}
+
+/* --- Form Styling --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: var(--input-radius);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+button.submit-btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: var(--input-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-end; /* Pushes button to the right */
+    transition: background 0.3s;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+button.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* --- Thank You Page Specifics --- */
+.thank-you-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Centers content vertically */
+}
+
+.check-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Green check color */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contact-box {
+    background-color: var(--accent-color);
+    padding: 20px 40px;
+    border-radius: 15px;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.contact-box p {
+    color: white;
+    margin: 5px 0;
+}
+
+.contact-box .label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.contact-box .email {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse; /* Puts image on top on mobile, text below */
+        text-align: left;
+    }
+    
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    button.submit-btn {
+        width: 100%; /* Full width button on mobile */
+    }
+}
