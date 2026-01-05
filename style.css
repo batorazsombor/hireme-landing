@@ -192,70 +192,19 @@ button.submit-btn:hover {
     font-weight: 600;
 }
 
-/* --- Mobile Responsive Fix --- */
-@media screen and (max-width: 768px) {
-    /* Step 1: Force the main container to be a vertical stack */
-    .container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start; /* Aligns text to the left */
-        padding: 20px;
-    }
-
-    /* Step 2: Strip the desktop 'half-and-half' width constraints */
-    .left-side, .right-side {
-        width: 100% !important;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Step 3: Precise Ordering */
-    
-    /* 1. Logo at the top */
-    .logo-container {
-        order: 1;
-        width: 100%;
-        display: flex;
-        justify-content: flex-start; /* Change to flex-end if you want it on the right */
-        margin-bottom: 20px;
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse; /* Puts image on top on mobile, text below */
+        text-align: left;
     }
     
-    .logo-container img {
-        width: 160px; /* Forces the logo to be visible and correctly sized */
-        height: auto;
+    .hero-image img {
+        max-width: 100%;
     }
 
-    /* 2 & 3. Headline and Subtext */
-    .hero-content {
-        order: 2;
-        margin-bottom: 20px;
-    }
-
-    /* 4. The Hero Image (Group 355) */
-    .image-container {
-        order: 3;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 30px 0;
-    }
-
-    .image-container img {
-        width: 100% !important; /* Fixes the "tiny dot" issue in your screenshot */
-        max-width: 450px;       /* Keeps it from becoming giant on tablets */
-        height: auto;
-    }
-
-    /* 5. Newsletter */
-    .newsletter-container {
-        order: 4;
-        width: 100%;
-    }
-
-    /* Input styling for mobile comfort */
-    .newsletter-container input {
-        width: 100%;
-        margin-bottom: 10px;
+    button.submit-btn {
+        width: 100%; /* Full width button on mobile */
     }
 
 }
