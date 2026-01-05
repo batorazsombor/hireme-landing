@@ -192,44 +192,56 @@ button.submit-btn:hover {
     font-weight: 600;
 }
 
-/* Mobile adjustments (up to 768px) */
+/* Mobile adjustments (Phone screens) */
 @media screen and (max-width: 768px) {
     .container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 20px;
+        padding: 30px 20px;
     }
 
-    /* This allows the children of left/right side to move independently */
-    .left-side, .right-side {
-        display: contents;
-    }
-
-    /* 1. Logo at the top right */
+    /* 1. Logo at the top-right */
     .logo-container {
-        order: 1;
         display: flex;
         justify-content: flex-end;
-        padding: 20px 0;
+        grid-row: 1; /* First row */
     }
 
-    /* 2. Headline & 3. Text */
+    .logo-container img {
+        width: 150px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    /* 2 & 3. Headline and Text */
     .hero-content {
-        order: 2;
+        grid-row: 2; /* Second row */
         text-align: left;
     }
 
-    /* 4. Group 355 image */
+    /* 4. Group 355.svg Image (Hero) */
     .image-container {
-        order: 3;
+        grid-row: 3; /* Third row */
         display: flex;
         justify-content: center;
-        margin: 20px 0;
+        margin: 10px 0;
+    }
+
+    .image-container img {
+        width: 90%; /* Scale up to be visible and clear */
+        max-width: 400px;
+        height: auto;
     }
 
     /* 5. Newsletter */
     .newsletter-container {
-        order: 4;
+        grid-row: 4; /* Fourth row */
         width: 100%;
+    }
+
+    /* Resetting the desktop containers so they don't interfere */
+    .left-side, .right-side {
+        display: contents;
     }
 
 }
