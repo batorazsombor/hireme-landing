@@ -1,112 +1,96 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-:root {
-    --bg-color: #1a1a40; /* Dark Blue from design */
-    --accent-color: #ff4060; /* Pink/Red from design */
-    --text-white: #ffffff;
-    --input-radius: 30px;
-}
-
+/* General Reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #16163F; /* Deep Blue Background */
+    color: white;
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-/* --- Container --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 20px;
-    width: 100%;
+    padding: 0 20px;
 }
 
-/* --- HEADER (Updated for Bigger Logo) --- */
+/* Header */
 header {
-    padding-top: 30px;
-    padding-bottom: 40px;
+    padding: 30px 0;
 }
 
 .logo {
-    /* Increased font size for "HireMe" text */
-    font-size: 42px; 
-    font-weight: 700;
-    color: white;
-    display: flex;
-    align-items: center;
+    height: 50px; /* Adjust based on actual logo size */
+    width: auto;
 }
 
-.logo img {
-    /* Increased height for the Tie Icon */
-    height: 50px; 
-    margin-left: 10px;
-}
-
-/* --- Hero Section --- */
-.hero {
+/* Hero Section Layout */
+.hero-section {
     display: flex;
-    flex-direction: row; /* Default: Side by side */
-    align-items: center;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 40px;
-    padding: 40px 0;
+    margin-bottom: 60px;
 }
 
-.hero-content {
+/* Left Column */
+.left-col {
     flex: 1;
-    max-width: 600px;
+    max-width: 550px;
 }
 
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px; /* Optional rounded corners for the collage */
-}
-
-/* --- Typography --- */
 h1 {
-    font-size: 2.5rem; /* Large headline */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
     line-height: 1.2;
-    margin-bottom: 20px;
 }
 
-h2 {
+/* Feature List */
+.feature-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.feature-list li i {
+    color: #27ae60; /* Green check color */
+    font-size: 1.2rem;
+    margin-right: 15px;
+    margin-top: 4px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid white; /* Makes the checkmark look like a solid circle */
+}
+
+/* Newsletter Form Box */
+.newsletter-box {
+    background: rgba(255, 255, 255, 0.05); /* Very subtle background for form area if needed, otherwise transparent */
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.newsletter-box h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-weight: 400;
+    margin-bottom: 5px;
 }
 
-.subtext {
+.newsletter-box p {
     font-size: 0.9rem;
     margin-bottom: 20px;
-    opacity: 0.9;
+    color: #ddd;
 }
 
-.description {
-    margin-top: 40px;
-    font-size: 0.95rem;
-    opacity: 0.8;
-    max-width: 90%;
-}
-
-/* --- Form Styling --- */
 form {
     display: flex;
     flex-direction: column;
@@ -118,93 +102,169 @@ input[type="text"],
 input[type="email"] {
     width: 100%;
     padding: 15px 20px;
-    border-radius: var(--input-radius);
+    border-radius: 30px;
     border: none;
     outline: none;
     font-size: 1rem;
-    font-family: inherit;
 }
 
-button.submit-btn {
-    background-color: var(--accent-color);
+.spam-notice {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+button[type="submit"] {
+    background-color: #FF4069; /* Pink/Red accent color */
     color: white;
-    padding: 15px 40px;
     border: none;
-    border-radius: var(--input-radius);
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    align-self: flex-end; /* Pushes button to the right */
-    transition: background 0.3s;
-    margin-top: 10px;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    width: fit-content;
+    transition: background-color 0.3s;
 }
 
-button.submit-btn:hover {
-    opacity: 0.9;
+button[type="submit"]:hover {
+    background-color: #e0365b;
+}
+
+/* Right Column */
+.right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-end;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.mockup-wrapper {
+    max-width: 100%;
+}
+
+.workers-wrapper {
+    max-width: 80%; /* The bottom image is slightly smaller in the design */
+    transform: rotate(3deg); /* Slight tilt for design effect */
+    border: 5px solid rgba(255,255,255,0.1); /* Optional border */
+}
+
+/* Footer Description */
+.description-text {
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: justify;
+    padding-bottom: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
 }
 
 /* --- Thank You Page Specifics --- */
+
 .thank-you-container {
+
     text-align: center;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
     height: 70vh; /* Centers content vertically */
+
 }
 
 .check-icon {
+
     width: 60px;
+
     height: 60px;
+
     background-color: #25d366; /* Green check color */
+
     color: white;
+
     border-radius: 50%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 30px;
+
     margin-bottom: 20px;
+
 }
 
 .contact-box {
+
     background-color: var(--accent-color);
+
     padding: 20px 40px;
+
     border-radius: 15px;
+
     margin-top: 30px;
+
     display: inline-block;
+
 }
 
 .contact-box p {
+
     color: white;
+
     margin: 5px 0;
+
 }
 
 .contact-box .label {
+
     font-size: 0.9rem;
+
     opacity: 0.9;
+
 }
 
 .contact-box .email {
+
     font-size: 1.1rem;
+
     font-weight: 600;
+
 }
 
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column-reverse; /* Puts image on top on mobile, text below */
-        text-align: left;
+/* Responsive Design (Mobile) */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .right-col {
+        align-items: center;
+        width: 100%;
     }
     
-    .hero-image img {
+    .workers-wrapper {
         max-width: 100%;
+        transform: none;
     }
-
-    button.submit-btn {
-        width: 100%; /* Full width button on mobile */
+    
+    h1 {
+        font-size: 2rem;
     }
-
 }
