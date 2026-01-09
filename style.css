@@ -121,6 +121,7 @@ button[type="submit"]:hover {
 .spam-notice {
     font-size: 0.75rem;
     color: #979797;
+    margin-left: 5px;
 }
 
 /* Right Column */
@@ -247,6 +248,7 @@ button[type="submit"]:hover {
         font-size: 2rem;
     }
 }
+
 
 
 
